@@ -1,211 +1,1125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EAF ::: UNIVERSITY ::: Dashboard</title>
-    <link rel="icon" type="image/png" href="https://uceou.in/eaf/student/images/logo.jpg">
-    <link rel="stylesheet" href="dashboard_style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+
+</title><link rel="icon" type="image/png" href="images/logo.jpg" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <link href="css/NewEafTemplate/bootstrap.min.css" rel="stylesheet" /><link href="css/NewEafTemplate/custom.css" rel="stylesheet" /><link href="css/NewEafTemplate/home.css" rel="stylesheet" /><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="Stylesheet" />
+    <style type="text/css">
+        .div-singout {
+            float: right;
+            background: #002a5c;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .link_singout {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /*a:hover{
+            color: #fff;
+        }*/
+    </style>
+    
+    <title>EAF ::: UNIVERSITY :::</title>  
+    <style type="text/css">
+    .modalBackground
+    {
+        background-color: Gray;
+        filter: alpha(opacity=80);opacity: 0.8;
+        z-index: 10000;
+    }
+   
+     .modalBackground2
+    {
+        background-color: Gray;
+        filter: alpha(opacity=80);
+        opacity: 0.8;
+        z-index: 10000;
+    }
+
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 500px;
+        height: 200px;
+    }    
+    .modalPopup2
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 650px;
+        height: 650px;
+    }
+        .label-danger {
+            position:absolute;
+        }
+</style>
+    <style>
+   .row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+.needHelp{
+    color: #092b77;
+    background-color: #fff;
+    border-color: #ddd;
+border:1px solid #ddd;
+padding:10px;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel {
+    margin-bottom: 0px;    
+    border: none;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+margin-top:15px;
+}
+.text_head {
+    font-size: 26px;
+}
+.text_body {
+    font-size: 20px;
+}
+.panel-footer > .pull-left {
+    font-size: 16px;
+}
+.panel-footer > .pull-right {
+    font-size: 16px;
+}
+.panel-footer {
+    padding: 10px 15px;
+    background-color: #d9d2da;
+    border-top: 2px ridge #adadad;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: #171717;
+}
+a {
+    color: #5A738E;
+    text-decoration: none;
+}
+       
+</style>
+    
+    <script type="text/javascript" language="javascript">
+        $("document").ready(function () {
+            $('#CPHEAF_rdbtnhst').change(function () {
+                debugger;
+                var val1 = $('#CPHEAF_rdbtnhst input:checked').val();
+                if (val1 == '0') {
+                    $('#CPHEAF_trdisp').show();
+                    $('#CPHEAF_txthstno').val('');
+                    $('#CPHEAF_txtmsno').val('');
+
+                }
+                else {
+                    $('#CPHEAF_trdisp').hide();
+                    $('#CPHEAF_txthstno').val(0);
+                    $('#CPHEAF_txtmsno').val(0);
+                }
+
+                return false;
+            });
+        });
+   </script>
 </head>
-<body>
-    <div class="wrapper">
-        <!-- Sidebar -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <img src="https://uceou.in/eaf/student/images/logo.jpg" alt="UCEOU Logo" class="logo-img">
-                <span class="logo-text">UCEOU</span>
-            </div>
+<body class="nav-md">
+    <form method="post" action="./index" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="ToolkitScriptManager2_HiddenField" id="ToolkitScriptManager2_HiddenField" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA4NDAzMTU5MQ9kFgJmD2QWAgIDD2QWAgIDD2QWDgIBD2QWCAIBDw8WAh4ISW1hZ2VVcmwFKmh0dHBzOi8vdWNlb3UuaW4vU3R1ZGVudFBob3Rvcy9CRS9sb2dvLmpwZ2RkAgMPDxYCHgRUZXh0BQVVQ0VPVWRkAgUPZBYIAgEPDxYCHwAFOmh0dHBzOi8vdWNlb3UuaW4vU3R1ZGVudFBob3Rvcy9CRTI0LzEwMDUyNDczMzAwNl9waG90by5qcGdkZAIDDw8WAh8BBQwxMDA1MjQ3MzMwMDZkZAIFDw8WAh8BBRtBTlVNQU5ETEEgU0FJIEJIQVJHQVYgUkVERFlkZAIHDw8WAh8BBQpCLkUuIC0gQ1NFZGQCBw9kFgYCBg8WAh4HVmlzaWJsZWdkAgkPFgIfAmhkAhEPFgIfAmdkAgMPDxYCHwJoZGQCBw9kFhICBQ8WAh8CZ2QCCQ8WAh8CaBYCAgEPDxYCHwEFC05vdCBVcGRhdGVkZGQCCw9kFgICAQ8PFgIfAQULTm90IFVwZGF0ZWRkZAIVDxYCHwJnZAIZDxYCHwJnZAIjDxYCHwJnZAIlDxYCHwJoZAInDxYCHgtfIUl0ZW1Db3VudAIBFgICAQ9kFgQCAQ8PFgIfAQUMMTAwNTI0NzMzMDA2ZGQCAg8VBQdJSUkgU2VtB1JlZ3VsYXIHRUFGIEZlZQoyMC8xMS8yMDI1GUVBRiBQcmVwYXJlZCAoMjAvMTEvMjAyNSlkAikPZBYCAgEPFgIfA2ZkAgkPDxYCHwEFIVVuaXZlcnNpdHkgQ29sbGVnZSBvZiBFbmdpbmVlcmluZ2RkAgsPDxYCHwEFCUh5ZGVyYWJhZGRkAg0PDxYCHwFlZGQCDw8PFgIfAQUhVW5pdmVyc2l0eSBDb2xsZWdlIG9mIEVuZ2luZWVyaW5nZGRkFE0Ps3ctmZisWVL61/1n4PIw9S4gBt3UJBZGvfH/4Ks=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
 
 
-            <ul class="list-unstyled components">
-                <li class="active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fas fa-id-card"></i> BioData/Hostel (Reg)</a></li>
-                <li>
-                    <a href="#profileSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user"></i> My Profile</a>
-                    <ul class="collapse list-unstyled" id="profileSubmenu">
-                        <li><a href="#">View Profile</a></li>
-                        <li><a href="#">Update MailId/Phone</a></li>
-                        <li><a href="#">Change Password</a></li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="fas fa-file-download"></i> Certificates Download</a></li>
-                <li>
-                    <a href="#eafSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-edit"></i> EAF</a>
-                    <ul class="collapse list-unstyled" id="eafSubmenu">
-                        <li><a href="#">EAF Preparation</a></li>
-                        <li><a href="#">EAF Print Out</a></li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="fas fa-redo"></i> Revaluation</a></li>
-                <li><a href="#"><i class="fas fa-hand-holding-usd"></i> Scholarship AppNo</a></li>
-                <li><a href="attendance.html"><i class="fas fa-calendar-alt"></i> Attendance</a></li>
-                <li><a href="#"><i class="fas fa-chart-bar"></i> Internals</a></li>
-                <li><a href="#"><i class="fas fa-comment-alt"></i> Feedback</a></li>
-                <li>
-                    <a href="#feesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-money-bill-wave"></i> Fees</a>
-                    <ul class="collapse list-unstyled" id="feesSubmenu">
-                        <li><a href="tuition_fee.html">Tuition Fee</a></li>
-                        <li><a href="condonation_fee.html">Condonation Fee</a></li>
-                        <li><a href="mess_fee.html">Mess Fee</a></li>
-                        <li><a href="lab_fee.html">Lab Fee</a></li>
-                        <li><a href="apply_certificate.html">Apply Certificate</a></li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="fas fa-id-badge"></i> Hall Tickets</a></li>
-                <li><a href="#"><i class="fas fa-book"></i> Enroled Subjects</a></li>
-                <li><a href="#"><i class="fas fa-credit-card"></i> Payments</a></li>
-                <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
-                <li><a href="#"><i class="fas fa-poll-h"></i> Results</a></li>
-                <li><a href="#"><i class="fas fa-camera"></i> Photo Upload</a></li>
-                <li><a href="uceou_login.html"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
-            </ul>
-        </nav>
+<script src="/WebResource.axd?d=8KDWw9fSkRE-Oci_3JZ3kFJJ6I0qTex3xnhorhKKq536vjjt-_gaLbDrktQmEjYttiXFIGt-JfNTpk6uxSRdH6S8_og9wS8mgZNkuNbOaUQ1&amp;t=637454268340000000" type="text/javascript"></script>
 
-        <!-- Page Content -->
-        <div id="content">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                            <i class="fas fa-align-left"></i>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="uceou_login.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
-                        </ul>
+
+<script src="/ScriptResource.axd?d=rdDcgKwEaiwXnz2yPmFY8MMucZKrJRf59n35Cb0R_qmYP7VH9Io_K-WYoQf1G2KwGukEP7FyNKzjhTu4cWNnotcIvaHcpSlERqzwi5m7k1CKeHjHO29A9Nr7N_LZJ-lMLiH74DSDBCHncKcC4j1WOTXeR_2Wd-ITZPlOuC0sEPI1&amp;t=ffffffffe929205a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=6zojut7zoGvjfV2jfu-ZdZ6tumk0gmsTYYETv0yBnqg1BrDxIf1C2oFBwOA9C5KawfdYDy0JED-LlAXviOYBhC0PQrbR5B_SEGvQWzUH087tugQGw5iwp-PS1ljuITSVu8EQdLiTIrjH1n5iYQ35Wg2&amp;t=ffffffffec54f2d7" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=cyplVCXCCtE0APBakTtiJ_-r3tGEe2nKkn3ScO_1E9p7S37Edo2s_DON-sHwyTPp4O1TWLBDKFbqSbZI02nthNGSQHwvXYj85x6c8t7L-vI5TPYyoo-se8pN5bWPqdTlPcariNabiTTGD6sTlX4mNg2&amp;t=ffffffffec54f2d7" type="text/javascript"></script>
+<script src="/EAF/Student/index?_TSM_HiddenField_=ToolkitScriptManager2_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d3.5.40412.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a1547e793-5b7e-48fe-8490-03a375b13a33%3ade1feab2%3af9cec9bc%3aa67c2700%3af2c8e708%3a8613aea7%3a3202a5a2%3aab09e3fe%3a87104b7c%3abe6fb298" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B0261641" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAB9pPeyCtE3MAMl8hLYg3qItSijMzqj94lEmTx5EChzBuP9Q6Yt8gKs44nnfCQ5RRp+FTaaVyBBzACBzZ2NJ49Tdc1yGA3Jwoxw4H2XbVxdGdYO7RBXqpSTQRheUoIl2hi2oROyvXEWrBeSiUvbljY6kIENN4HNwqVTZWBPzFNAsN9j6Zmu7fASi/mx7XvMFDXhn/RClShn6AEYHBFz3p5XRLDSVn0LbqYQIoi4dlVrZ6t6zx5hV9CHcDn6D0T3jzd1Q+xX53UkcBQJVan4P9yqu5dc7mxXKkXkBBuCcwZGoK1F/AGQJsvAn2Gv32JDedPh8ngbWEKA5IxBHBLrAfdNecuE3nVPim1VgMKwojRNWTRjP+8s2yh3fIHWX8cUUMfjVQEOF12aPBptiYq9j3C6d4r4PPm7hDZmRklF1v4lqx6h+Ce4OB6zpbVrLAh2NILb/Db0IAbfcEtPDKWJY3ZaYo1sxleJTmNE3F71ofiNnGIy75vq1DQ2hW5aC3Q3WaJWbEkS3AJMBmCA7cy4GesMz+TpgTZrEpr4bcGTrYHzCkKV8iXDShssltET12gqFqxPH0kaDmgL5WO2mb2Py/SpTE6KXIAOR9gm2REcvGwdwuelu0qBqjQG7h+2aeGJ+poTieN5CWzRNtSFVqlDRoiSZWbiwKR3pdMUHstsl6bX/5WGgfc1MCnj0UNw4YGFLZhY=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager2', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div id="bodyMasterPage" class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div id="divtitle" class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="index.aspx" class="site_title"><img id="imgclgphoto" src="https://uceou.in/StudentPhotos/BE/logo.jpg" style="max-height: 35px;" /><span><span id="lblshortcollege">UCEOU</span></span></a>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div id="divprofile" class="profile clearfix">
+                            <center>
+                                <div class="profile_pic">
+                                    <img id="imgstdphoto" class="img-circle profile_img" src="https://uceou.in/StudentPhotos/BE24/100524733006_photo.jpg" />
+
+                                </div>
+                                <div class="profile_info">
+                                    <h2><span id="lblhtno">100524733006</span></h2>
+                                    <h2><span id="lblsname">ANUMANDLA SAI BHARGAV REDDY</span></h2>
+                                    <h2><span id="lblcourse">B.E. - CSE</span></h2>
+                                </div>
+                            </center>
+                        </div>
+                        <!-- /menu profile quick info -->
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div id="divchange" class="menu_section">
+                                <ul class="nav side-menu">
+                                    <li>
+                                        <a href="index.aspx"><i class="fa fa-home"></i> Home</a>
+                                    </li>
+                                    <li>
+                                        <a href='https://uceou.in/BERegistrations/Biodata/Hallticket?htno=100524733006'>
+                                            <i class="fa fa-bell"></i> BioData/Hostel (Reg)
+                                        </a>
+                                    </li>
+                                    
+                                    <li id="liprofile">
+                                        <a href="#"><i class="fa fa-user"></i> My Profile<span class="fa fa-chevron-down"></span></a>
+                                        <ul id="lisubprofile" class="nav child_menu">
+                                            <li><a href="ViewProfile.aspx?id=1">View Profile</a></li>
+                                            
+                                            <li><a href="ViewProfile.aspx?id=3">Update MailId and Phone Number</a></li>
+                                            <li><a href="ViewProfile.aspx?id=4">Change of Password</a></li>
+                                        </ul>
+                                    </li>
+                                    <li id="li4">
+                                        <a href="DownloadCertificates.aspx"><i class="fa fa-inbox"></i>Certificates Download</a>
+                                    </li>
+                                    
+                                    <li id="lieaf">
+                                        <a><i class="fa fa-edit"></i> EAF <span class="fa fa-chevron-down"></span></a>
+                                        <ul id="lisubeaf" class="nav child_menu">
+                                            <li><a href="EafStudent.aspx">EAF Preperation</a></li>
+                                            <li><a href="StudentReport.aspx">EAF Print Out</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    
+                                    <li id="lirev">
+                                        <a href="Revaluation.aspx"><i class="fa fa-bell-o"></i> Revaluation</a>
+                                    </li>
+                                    <li id="li3">
+                                        <a href="StudentScholarship.aspx"><i class="fa fa-bell-o"></i> Scholarship AppNo</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="Attendance.aspx"><i class="fa fa-address-card-o"></i>Attendance</a>
+                                    </li>
+                                    
+                                    <li id="li2">
+                                        <a href="Internals.aspx"><i class="fa fa-upload"></i>Internals</a>
+                                    </li>
+                                    
+
+                                    <li id="lifeedback">
+                                        <a id="lnkfeedback" class="fa fa-handshake-o" href="javascript:__doPostBack(&#39;ctl00$lnkfeedback&#39;,&#39;&#39;)" style="width:100%;font-size: 18px;">
+                                            &nbsp Feedback
+                                        </a>
+                                    </li>
+                                    <li id="lifee">
+                                        <a><i class="fa fa-money"></i> Fees <span class="fa fa-chevron-down"></span></a>
+                                        <ul id="lisubtut" class="nav child_menu">
+                                            <li><a href="TotalStudentDues.aspx">Tuition Fee</a></li>
+                                            <li><a href="CondonationFee.aspx">Condonation Fee</a></li>
+                                            <li id="limess"><a href="StudentMessFeeDetails.aspx">Mess Fee</a></li>
+                                            <li id="li1">
+                                                <a href="OnlineserviceIndex.aspx"><i class="fa fa-handshake-o"></i>Apply Certificates</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </li>
+
+                                    
+
+                                    
+
+                                    
+                                    
+                                    <li id="libeht">
+                                        <a href="BESingleHT.aspx"><i class="fa fa-ticket"></i>Hall Tickets</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="EnrolledSubjectsReport.aspx"><i class="fa fa-book"></i> Enroled Subjects</a>
+                                    </li>
+                                    <li id="lipayments">
+                                        <a href="PaymentsPay.aspx"><i class="fa fa-key"></i> Payments</a>
+                                    </li>
+                                    <li id="linotification">
+                                        <a href="Notifications.aspx"><i class="fa fa-bell-o"></i> Notifications</a>
+                                    </li>
+
+                                    <li style="display:none;">
+                                        <a>
+                                            <i class="fa fa-send"></i>Request (TC/BC/Pass)<span class="fa fa-chevron-down">
+
+                                            </span>
+                                        </a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="RequestForTC.aspx">Apply for TC</a></li>
+                                            <li><a href="BCForm.aspx">Apply for Bonafide</a></li>
+                                            <li><a href="BusPass.aspx">Apply for Bus Pass</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li id="liresults">
+                                        <a href="Comingup.aspx"><i class="fa fa-table"></i> Results</a>
+                                        
+                                    </li>
+                                    <li style="display:none;">
+                                        <a href="Comingup.aspx"><i class="fa fa-book"></i> Syllabus</a>
+                                    </li>
+                                    <li style="display:none;">
+                                        <a href="Comingup.aspx"><i class="fa fa-file-text-o"></i>Exams</a>
+                                    </li>
+                                    <li>
+                                        <a href="PhotoUpload.aspx"><i class="fa fa-book"></i> Photo Upload</a>
+                                    </li>
+                                    <li>
+                                        <a id="lnksingout" class="fa fa-sign-out" href="javascript:__doPostBack(&#39;ctl00$lnksingout&#39;,&#39;&#39;)" style="width:100%;font-size: 18px;">
+                                            &nbsp Log Out
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /sidebar menu -->
+                        <!-- /menu footer buttons -->
+                        
+                        <!-- /menu footer buttons -->
                     </div>
                 </div>
-            </nav>
 
-            <div class="container-fluid dashboard-main">
-                <div class="dashboard-header">
-                    <h2 style="color: #002a5c; font-weight: 700; font-size: 24px;">Dashboard</h2>
-                    <span class="support-label" style="background: #fff; padding: 5px 15px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-weight: 600; color: #333;"><i class="fas fa-circle" style="color: #4CAF50; margin-right: 5px; font-size: 10px;"></i> SUPPORT</span>
-                </div>
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <nav>
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
 
-                <!-- Tile Grid -->
-                <div class="row tile-grid">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="tile tile-blue">
-                            <div class="tile-icon"><i class="fas fa-user-graduate"></i></div>
-                            <div class="tile-body">
-                                <h4>Exam</h4>
-                                <p>Application Form</p>
                             </div>
-                            <div class="tile-footer">Prepare EAF <i class="fas fa-arrow-circle-right pull-right"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="tile tile-orange">
-                            <div class="tile-icon"><i class="fas fa-university"></i></div>
-                            <div class="tile-body">
-                                <h4>Fee Dues</h4>
-                                <p>Not Updated</p>
+                            <div class="col-sm-10" style="text-align: end;">
+                                
                             </div>
-                            <div class="tile-footer">Make Payment <i class="fas fa-arrow-circle-right pull-right"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="tile tile-pink">
-                            <div class="tile-icon"><i class="fas fa-bell"></i></div>
-                            <div class="tile-body">
-                                <h4>Notifications</h4>
-                                <p>&nbsp;</p>
+
+                            <div class=" div-singout">
+
+                                <a id="lnklogout" class="fa fa-sign-out link_singout" href="javascript:__doPostBack(&#39;ctl00$lnklogout&#39;,&#39;&#39;)" style="width:100%; height: 20px;">Log Out</a>
                             </div>
-                            <div class="tile-footer">View Notifications <i class="fas fa-arrow-circle-right pull-right"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="tile tile-purple">
-                            <div class="tile-icon"><i class="fas fa-print"></i></div>
-                            <div class="tile-body">
-                                <h4>EAF</h4>
-                                <p>Print</p>
-                            </div>
-                            <div class="tile-footer">EAF Print Here <i class="fas fa-arrow-circle-right pull-right"></i></div>
-                        </div>
+                        </nav>
                     </div>
                 </div>
+                <!-- /top navigation -->
+                <div class="clearfix"></div>
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <div class="">
+                        
+    
+    
+  
+    <div class="col-md-12 col-sm-12" style="width:100%;">
 
-                <div class="row tile-grid">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="tile tile-grey">
-                            <div class="tile-icon"><i class="fas fa-file-alt"></i></div>
-                            <div class="tile-body">
-                                <h4>Online</h4>
-                                <p>Certificates</p>
-                            </div>
-                            <div class="tile-footer">Apply Certificates <i class="fas fa-arrow-circle-right pull-right"></i></div>
+        <div class="col-md-7 col-xs-6 col-sm-6">
+            <h2 style="margin:0px;color:#141471;" >Dashboard</h2>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-2 col-xs-6 col-sm-6" style="padding: 6px;">
+            <img src="images/greenanim.gif" alt="" style="width:10%;margin-top: 3px;vertical-align: top;"/>
+            <a href="../Student/AddRequest.aspx" style="font-size:22px;font-weight:bold;color:#141471;padding-left:6px;" >SUPPORT
+            </a></div>       
+        
+
+    </div>
+  
+    <div class="col-md-12 col-sm-12" style="margin-left: 0px;background: #fff;padding: 0px 12px;width:100%;">
+        <div id="CPHEAF_tbEAFPrepare" class="col-lg-3 col-md-6 col-sm-12">
+            <div class="panel" style="height:125px;">
+                 <a href="EafStudent.aspx">
+                <div class="panel-heading eaf">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-user-o fa-4x"></i>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="tile tile-lightpink">
-                            <div class="tile-icon"><i class="fas fa-print"></i></div>
-                            <div class="tile-body">
-                                <h4>Revaluation</h4>
-                                <p>Print</p>
-                            </div>
-                            <div class="tile-footer">EAF Print Here <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        <div class="col-xs-9 text-right">
+                            <div class="text_head">Exam</div>
+                            <div class="text_body">Application Form</div>     
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="tile tile-lavender">
-                            <div class="tile-icon"><i class="fas fa-history"></i></div>
-                            <div class="tile-body">
-                                <h4>History</h4>
-                                <p>Paid Amounts</p>
-                            </div>
-                            <div class="tile-footer">Payment History Here <i class="fas fa-arrow-circle-right pull-right"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="tile tile-green">
-                            <div class="tile-icon"><i class="fas fa-envelope-open-text"></i></div>
-                            <div class="tile-body">
-                                <h4>Need Help ?</h4>
-                                <p>View/Post Query</p>
-                            </div>
-                            <div class="tile-footer">View/Submit your queries <i class="fas fa-arrow-circle-right pull-right"></i></div>
-                        </div>
-                    </div>
+                    </div>                   
                 </div>
-
-
-                <!-- Important Updates Table -->
-                <div class="row" style="margin-top: 30px;">
-                    <div class="col-md-12">
-                        <div class="content-panel">
-                            <div class="panel-header">Important Updates</div>
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Year/Sem</th>
-                                            <th>Exam Type</th>
-                                            <th>Fee Type</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>III Sem</td>
-                                            <td>Regular</td>
-                                            <td>EAF Fee</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                <div class="panel-footer">
+                        <span class="pull-left">Prepare EAF</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
-    </div>
+        
+        
+        <div id="CPHEAF_Div2" class="col-lg-3 col-md-6 col-sm-12">
+            <div class="panel"  style="height:125px;">
+                <a href="TotalStudentDues.aspx">
+                <div class="panel-heading tution">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-institution fa-4x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="text_head">Fee Dues</div>        
+                            <div class="text_body"> <span id="CPHEAF_Label2">Not Updated</span></div>        
+                        </div>
+                    </div>                   
+                </div>
+                
+                    <div class="panel-footer">
+                        <span class="pull-left">Make Payment</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+         
+        
+        <div id="CPHEAF_tbTuitionPrepare3" class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="panel" style="height:125px;">
+                        <a href="Notifications.aspx">
+                            <div class="panel-heading notification">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-bell-o fa-4x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="text_head">Notifications</div>
+                                        <div class="text_body">&nbsp;</div>
+                                    </div>
+                                </div>
+                            </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="dashboard_script.js"></script>
+                            <div class="panel-footer" style="height:45px;">
+                                <span class="pull-left">View Notifications</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+        <div id="CPHEAF_tbEAFPrint" class="col-lg-3 col-md-6 col-sm-12">
+            <div class="panel"  style="height:125px;">  
+                 
+                <a href="StudentReport.aspx">
+                <div class="panel-heading print">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-print fa-4x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="text_head">EAF</div>        
+                            <div class="text_body">Print</div>        
+                        </div>
+                    </div>                   
+                </div>
+               
+                    <div class="panel-footer">
+                        <span class="pull-left">EAF Print Here</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                   
+                    </a>
+                
+            </div>
+        </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="panel"  style="height:125px;">
+                <a href="../Student/OnlineserviceIndex.aspx">
+                <div class="panel-heading OnlineCert">
+                    <div class="row">
+                        <div class="col-xs-3">
+                             
+                            <i class="fa fa-newspaper-o fa-4x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                        
+                            <div class="text_head">Online Certificates</div>        
+                            <div class="text_body"></div>  
+                              
+                        </div>
+                    </div>                   
+                </div>
+                
+                    <div class="panel-footer">
+                        <span class="pull-left">Apply Certificates</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+          
+        <div id="CPHEAF_Div4" class="col-lg-3 col-md-6 col-sm-12">
+            <div class="panel"  style="height:125px;">                   
+                <a href="RVReport.aspx">
+                <div class="panel-heading rev">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-print fa-4x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="text_head">Revaluation</div>        
+                            <div class="text_body">Print</div>        
+                        </div>
+                    </div>                   
+                </div>               
+                    <div class="panel-footer">
+                        <span class="pull-left">EAF Print Here</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                    </a>
+            </div>
+        </div> 
+        <div id="CPHEAF_Div1" class="col-lg-3 col-md-6 col-sm-12">
+            <div class="panel"  style="height:125px;">
+                <a href="PaymentStatus.aspx">
+                <div class="panel-heading history">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-money fa-4x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="text_head">History</div>        
+                            <div class="text_body">Paid Amounts</div>        
+                        </div>
+                    </div>                   
+                </div>
+                
+                    <div class="panel-footer">
+                        <span class="pull-left">Payment History Here</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+       <div id="CPHEAF_tbTuitionPrint" class="col-lg-3 col-md-6 col-sm-12" style="display:none;">
+           <div class="panel"  style="height:125px;">
+                <a href="TuitionFeeReport.aspx"> 
+                <div class="panel-heading  acnld">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-print fa-4x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="text_head">Payments</div>        
+                            <div class="text_body">Acknowledgement</div>        
+                        </div>
+                    </div>                   
+                </div>
+                
+                    <div class="panel-footer">
+                        <span class="pull-left">Print Payments Here</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+           
+        <div id="CPHEAF_divplcblur" class="col-lg-3 col-md-6 col-sm-12" style="opacity:0.4;display:none;">
+           <div class="panel"  style="height:125px;">
+               <a href="PlacementsInvalid.aspx">
+
+                <div class="panel-heading  acnld">
+                    <div class="row">
+                        <div class="col-xs-4">
+                           <img src="loginmask/images/placementuser.png" class="img-responsive"/>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <div class="text_head">Placements</div>        
+                            <div class="text_body">&nbsp;</div>        
+                        </div>
+                    </div>                   
+                </div>
+                
+                    <div class="panel-footer">
+                        <span class="pull-left">Click Here</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                   </a>
+              
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12" id="tbTuitionPrepare1" >
+            <div class="panel"  style="height:125px;">
+                <a href="../Student/AddRequest.aspx">
+                <div class="panel-heading Result">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-envelope fa-4x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                        
+                            <div class="text_head">Need Help ?</div>        
+                            <div class="text_body">View/Post Query</div>  
+                              
+                        </div>
+                    </div>                   
+                </div>
+                
+                    <div class="panel-footer">
+                        <span class="pull-left">View/Submit your queries</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right" style="font-size:22px;"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+         
+
+    </div>      
+  
+    <table width="100%" cellpadding="0" cellspacing="0">         
+        <tr>
+            <td width="70%" style="vertical-align: top;">
+                
+                           <div class="panel notifi" style="margin-top:35px;">
+                         <div class="panel-heading notifi_head">
+         <span> Important Updates</span>
+            </div>
+                          <div class=" panel-body">  
+                              <div class=" table-responsive" style="width:100%;overflow-x:auto">
+                        <table width="100%" class="table table-bordered">
+                            <tr>
+                                <th style="display:none">
+                                    HTNO
+                                </th>
+                                <th>
+                                    Year/Sem
+                                </th>
+                                <th>
+                                    Exam Type
+                                </th>
+                                <th>
+                                Fee Type
+                                </th>
+                                 <th style="display:none;">
+                                Last Date
+                                </th>
+                                <th style="display:none;">
+                                    Application Status
+                                </th>
+                                
+                            </tr>
+                            </div>
+                              </div>
+                               </div>
+                    
+                        <tr>
+                            <td style="display:none">
+                               
+                                    <span id="CPHEAF_rptstudentstatus_lblHTNO_0">100524733006</span>
+                              
+                            </td>
+                            <td>
+                                    III Sem
+                            </td>
+                            <td>
+                                    Regular
+                            </td>
+                            <td>
+                                    EAF Fee
+                            </td>
+                            <td style="display:none;">
+                                    20/11/2025
+                            </td>
+                            <td style="display:none;">
+                                
+                                    EAF Prepared (20/11/2025)
+                                <input type="hidden" name="ctl00$CPHEAF$rptstudentstatus$ctl01$hdnMedium" id="CPHEAF_rptstudentstatus_hdnMedium_0" value="English" />
+                                <input type="hidden" name="ctl00$CPHEAF$rptstudentstatus$ctl01$hdnCourseid" id="CPHEAF_rptstudentstatus_hdnCourseid_0" value="26" />
+                                <input type="hidden" name="ctl00$CPHEAF$rptstudentstatus$ctl01$hdnOptioncode" id="CPHEAF_rptstudentstatus_hdnOptioncode_0" value="733" />
+                                <input type="hidden" name="ctl00$CPHEAF$rptstudentstatus$ctl01$hdnRollid" id="CPHEAF_rptstudentstatus_hdnRollid_0" value="340" />
+                            </td>
+                        </tr>
+                    
+                        </table>
+                    
+            </td>
+            
+        </tr>
+    </table>
+
+       
+    <input type="submit" name="ctl00$CPHEAF$btnShowPopup" value="" id="CPHEAF_btnShowPopup" style="display: none" />    
+
+      
+
+    <div id="CPHEAF_pnlpopup" class="modalPopup" align="center" style="display: none">
+	
+        <div style="text-align: right;">
+            <a id="CPHEAF_lnksignout" class="btn btn-danger" href="javascript:__doPostBack(&#39;ctl00$CPHEAF$lnksignout&#39;,&#39;&#39;)">Close</a>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                 <tr>
+                     <td>
+
+                        <a href="EnrolSubjects.aspx" class="btn btn-link" style="font-size:20px;text-decoration:underline;">Click here for Subjects Registration</a>
+                     </td>
+                 </tr>
+                
+              
+            </table>
+        </div>
+
+        <table class="table table-borderless" style="border: 1px solid #ddd; padding: 15px;display:none;">
+
+            <tr>
+                <td colspan="3" style="font-weight: bold; font-size: 18px; color: #b90909;">Update Information</td>
+            </tr>
+            
+            <tr >
+                <td><b>Identification Marks 1</b></td>
+                <td>:</td>
+                <td>
+               <input name="ctl00$CPHEAF$txtid1" type="text" maxlength="45" id="CPHEAF_txtid1" class="form-control" placeholder="Identification Marks 1" />
+                    
+                  
+                </td>
+            </tr>
+            <tr>
+                <td><b>Identification Marks 2</b></td>
+                <td>:</td>
+                <td>
+              <input name="ctl00$CPHEAF$txtid2" type="text" maxlength="45" id="CPHEAF_txtid2" class="form-control" placeholder="Identification Marks 2" />
+                </td>
+            </tr>
+            <tr>
+                <td><b>Mother Name</b></td>
+                <td>:</td>
+                <td>
+                    <input name="ctl00$CPHEAF$txtmname" type="text" maxlength="45" id="CPHEAF_txtmname" class="form-control" placeholder="Mother Name" />
+                   <span id="CPHEAF_RequiredFieldValidator1" class="alert-danger" style="display:none;">Enter Mother Name</span>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 20px;display:none;">
+            <div style="font-weight: bold; font-size: 18px; color: #b90909; float: left; padding-left: 12px;">Boarder / Non-boarder 
+
+            </div>
+            <div>
+                <table class="table table-borderless">
+                    <tr>
+                        <td style="border: none;width: 65%;">
+                            <b>Are you staying in Osmania University hostel</b>
+                        </td>
+                        <td style="float: left; border: none;">
+                            <table id="CPHEAF_rdbtnhst">
+		<tr>
+			<td><input id="CPHEAF_rdbtnhst_0" type="radio" name="ctl00$CPHEAF$rdbtnhst" value="0" /><label for="CPHEAF_rdbtnhst_0"> Yes  </label></td><td><input id="CPHEAF_rdbtnhst_1" type="radio" name="ctl00$CPHEAF$rdbtnhst" value="1" /><label for="CPHEAF_rdbtnhst_1"> No</label></td>
+		</tr>
+	</table>
+                            <span id="CPHEAF_RequiredFieldValidator8" class="label label-danger" style="display:none;">Select Hostel</span>
+                        </td>
+                    </tr>
+                    <tr id="CPHEAF_trdisp" style="display: none;">
+		<td>
+                            <label>Hostel Name</label>
+                            <input name="ctl00$CPHEAF$txthstno" type="text" maxlength="20" id="CPHEAF_txthstno" class="form-control" />
+                            <span id="CPHEAF_RequiredFieldValidator2" class="alert-danger" style="display:none;">Enter Hostel No</span>
+                        </td>
+		<td>
+                            <label>Room Number</label>
+                            <input name="ctl00$CPHEAF$txtmsno" type="text" maxlength="20" id="CPHEAF_txtmsno" class="form-control" />
+                            <span id="CPHEAF_RequiredFieldValidator3" class="alert-danger" style="display:none;">Enter Room No</span>
+                        </td>
+	</tr>
+	
+                </table>
+
+            </div>
+        </div>
+
+        <center style="padding-bottom: 20px;padding-top: 25px;display:none;">
+            <input type="submit" name="ctl00$CPHEAF$btnCancel" value="Close" id="CPHEAF_btnCancel" class="btn btn-danger" style="display: none" />
+            <input type="submit" name="ctl00$CPHEAF$btnsubmit" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$CPHEAF$btnsubmit&quot;, &quot;&quot;, true, &quot;grp&quot;, &quot;&quot;, false, false))" id="CPHEAF_btnsubmit" class="btn btn-primary" />
+        </center>
+
+    
+</div>
+
+     
+
+    <div id="CPHEAF_pnlphd" class="modalPopup2" align="center" style="display: none">
+	
+        <div style="text-align: right;">
+            <a id="CPHEAF_LinkButton1" class="btn btn-danger" href="javascript:__doPostBack(&#39;ctl00$CPHEAF$LinkButton1&#39;,&#39;&#39;)">Close</a>
+        </div>
+
+        <table class="table table-borderless" style="border: 1px solid #ddd; padding: 15px;">
+
+            <tr>
+                <td colspan="3" style="font-weight: bold; font-size: 18px; color: #b90909;">Update Information</td>
+            </tr>            
+            <tr>
+                <td><b>Identification Marks 1</b></td>
+                <td>:</td>
+                <td>
+                    <input name="ctl00$CPHEAF$txtphdid1" type="text" maxlength="45" id="CPHEAF_txtphdid1" class="form-control" placeholder="Identification Marks 1" />
+                    
+                    <span id="CPHEAF_RequiredFieldValidator14" class="alert-danger" style="display:none;">Enter Identification1</span>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Identification Marks 2</b></td>
+                <td>:</td>
+                <td>
+                    <input name="ctl00$CPHEAF$txtphdid2" type="text" maxlength="45" id="CPHEAF_txtphdid2" class="form-control" placeholder="Identification Marks 2" />
+                    <span id="CPHEAF_RequiredFieldValidator5" class="alert-danger" style="display:none;">Enter Identification2</span>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Mother Name</b></td>
+                <td>:</td>
+                <td>
+                    <input name="ctl00$CPHEAF$txtphdmname" type="text" maxlength="45" id="CPHEAF_txtphdmname" class="form-control" placeholder="Mother Name" />
+                   <span id="CPHEAF_RequiredFieldValidator4" class="alert-danger" style="display:none;">Enter Mother Name</span>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Father Name</b></td>
+                <td>:</td>
+                <td>
+                    <input name="ctl00$CPHEAF$txtphdfname" type="text" maxlength="45" id="CPHEAF_txtphdfname" class="form-control" placeholder="Father Name" />
+                   <span id="CPHEAF_RequiredFieldValidator7" class="alert-danger" style="display:none;">Enter Father Name</span>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Gender</b></td>
+                <td>:</td>
+                <td>
+                   <select name="ctl00$CPHEAF$ddlgender" id="CPHEAF_ddlgender">
+		<option value="0">--Select--</option>
+		<option value="M">Male</option>
+		<option value="F">Female</option>
+
+	</select>
+                           <span id="CPHEAF_RequiredFieldValidator9" class="label label-danger" style="display:none;">Select Gender</span>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Address</b></td>
+                <td>:</td>
+                <td>
+                    <textarea name="ctl00$CPHEAF$txtaddress" rows="2" cols="20" id="CPHEAF_txtaddress" class="form-control" style="height:75px;">
+</textarea>
+                   <span id="CPHEAF_RequiredFieldValidator6" class="alert-danger" style="display:none;">Enter Address</span>
+                    <span id="CPHEAF_valInput" class="alert-danger" style="display:none;">*Please enter a maximum of 200 characters</span>
+                </td>
+            </tr>
+        </table>
+        <center style="padding-bottom: 20px;padding-top: 25px;">
+            <input type="submit" name="ctl00$CPHEAF$btnphdcancel" value="Close" id="CPHEAF_btnphdcancel" class="btn btn-danger" style="display: none" />
+            <input type="submit" name="ctl00$CPHEAF$btnphdsubmit" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$CPHEAF$btnphdsubmit&quot;, &quot;&quot;, true, &quot;phd&quot;, &quot;&quot;, false, false))" id="CPHEAF_btnphdsubmit" class="btn btn-primary" />
+        </center>
+    
+</div>
+        
+    
+        <div class="clearfix"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- /page content -->
+                <div class="clearfix"></div>
+
+
+                <!-- footer content -->
+                <div class="footer1">
+                    <h4><span id="lblcolname">University College of Engineering</span></h4>
+                    <P style="text-align: right;padding-right: 120px;font-size: 16px;">Phone No. 040-27097140</P>
+                    
+                    
+                    <p><span id="lbldistrict">Hyderabad</span>, <span id="lblpincode"></span>.</p>
+                    <p>Telangana, India.</p>
+                </div>
+                <div class="clearfix"></div>
+                <footer id="footer">
+                    <div class="pull-right" id="">
+                        <p>
+                            Copy rights ©  <span id="lblfootcollname">University College of Engineering</span> - 2025.
+                        </p>
+                    </div>
+                    <div class="pull-left">
+                        <p>
+                            Powered by Cyberheights Software Technologies Pvt. Ltd.
+                        </p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("CPHEAF_RequiredFieldValidator1"), document.getElementById("CPHEAF_RequiredFieldValidator8"), document.getElementById("CPHEAF_RequiredFieldValidator2"), document.getElementById("CPHEAF_RequiredFieldValidator3"), document.getElementById("CPHEAF_RequiredFieldValidator14"), document.getElementById("CPHEAF_RequiredFieldValidator5"), document.getElementById("CPHEAF_RequiredFieldValidator4"), document.getElementById("CPHEAF_RequiredFieldValidator7"), document.getElementById("CPHEAF_RequiredFieldValidator9"), document.getElementById("CPHEAF_RequiredFieldValidator6"), document.getElementById("CPHEAF_valInput"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var CPHEAF_RequiredFieldValidator1 = document.all ? document.all["CPHEAF_RequiredFieldValidator1"] : document.getElementById("CPHEAF_RequiredFieldValidator1");
+CPHEAF_RequiredFieldValidator1.controltovalidate = "CPHEAF_txtmname";
+CPHEAF_RequiredFieldValidator1.focusOnError = "t";
+CPHEAF_RequiredFieldValidator1.errormessage = "Enter Mother Name";
+CPHEAF_RequiredFieldValidator1.display = "Dynamic";
+CPHEAF_RequiredFieldValidator1.validationGroup = "grp";
+CPHEAF_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator1.initialvalue = "";
+var CPHEAF_RequiredFieldValidator8 = document.all ? document.all["CPHEAF_RequiredFieldValidator8"] : document.getElementById("CPHEAF_RequiredFieldValidator8");
+CPHEAF_RequiredFieldValidator8.controltovalidate = "CPHEAF_rdbtnhst";
+CPHEAF_RequiredFieldValidator8.focusOnError = "t";
+CPHEAF_RequiredFieldValidator8.errormessage = "Select Hostel";
+CPHEAF_RequiredFieldValidator8.display = "Dynamic";
+CPHEAF_RequiredFieldValidator8.validationGroup = "grp";
+CPHEAF_RequiredFieldValidator8.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator8.initialvalue = "";
+var CPHEAF_RequiredFieldValidator2 = document.all ? document.all["CPHEAF_RequiredFieldValidator2"] : document.getElementById("CPHEAF_RequiredFieldValidator2");
+CPHEAF_RequiredFieldValidator2.controltovalidate = "CPHEAF_txthstno";
+CPHEAF_RequiredFieldValidator2.focusOnError = "t";
+CPHEAF_RequiredFieldValidator2.errormessage = "Enter Hostel No";
+CPHEAF_RequiredFieldValidator2.display = "Dynamic";
+CPHEAF_RequiredFieldValidator2.validationGroup = "grp";
+CPHEAF_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator2.initialvalue = "";
+var CPHEAF_RequiredFieldValidator3 = document.all ? document.all["CPHEAF_RequiredFieldValidator3"] : document.getElementById("CPHEAF_RequiredFieldValidator3");
+CPHEAF_RequiredFieldValidator3.controltovalidate = "CPHEAF_txtmsno";
+CPHEAF_RequiredFieldValidator3.focusOnError = "t";
+CPHEAF_RequiredFieldValidator3.errormessage = "Enter Room No";
+CPHEAF_RequiredFieldValidator3.display = "Dynamic";
+CPHEAF_RequiredFieldValidator3.validationGroup = "grp";
+CPHEAF_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator3.initialvalue = "";
+var CPHEAF_RequiredFieldValidator14 = document.all ? document.all["CPHEAF_RequiredFieldValidator14"] : document.getElementById("CPHEAF_RequiredFieldValidator14");
+CPHEAF_RequiredFieldValidator14.controltovalidate = "CPHEAF_txtphdid1";
+CPHEAF_RequiredFieldValidator14.focusOnError = "t";
+CPHEAF_RequiredFieldValidator14.errormessage = "Enter Identification1";
+CPHEAF_RequiredFieldValidator14.display = "Dynamic";
+CPHEAF_RequiredFieldValidator14.validationGroup = "phd";
+CPHEAF_RequiredFieldValidator14.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator14.initialvalue = "";
+var CPHEAF_RequiredFieldValidator5 = document.all ? document.all["CPHEAF_RequiredFieldValidator5"] : document.getElementById("CPHEAF_RequiredFieldValidator5");
+CPHEAF_RequiredFieldValidator5.controltovalidate = "CPHEAF_txtphdid2";
+CPHEAF_RequiredFieldValidator5.focusOnError = "t";
+CPHEAF_RequiredFieldValidator5.errormessage = "Enter Identification2";
+CPHEAF_RequiredFieldValidator5.display = "Dynamic";
+CPHEAF_RequiredFieldValidator5.validationGroup = "phd";
+CPHEAF_RequiredFieldValidator5.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator5.initialvalue = "";
+var CPHEAF_RequiredFieldValidator4 = document.all ? document.all["CPHEAF_RequiredFieldValidator4"] : document.getElementById("CPHEAF_RequiredFieldValidator4");
+CPHEAF_RequiredFieldValidator4.controltovalidate = "CPHEAF_txtphdmname";
+CPHEAF_RequiredFieldValidator4.focusOnError = "t";
+CPHEAF_RequiredFieldValidator4.errormessage = "Enter Mother Name";
+CPHEAF_RequiredFieldValidator4.display = "Dynamic";
+CPHEAF_RequiredFieldValidator4.validationGroup = "phd";
+CPHEAF_RequiredFieldValidator4.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator4.initialvalue = "";
+var CPHEAF_RequiredFieldValidator7 = document.all ? document.all["CPHEAF_RequiredFieldValidator7"] : document.getElementById("CPHEAF_RequiredFieldValidator7");
+CPHEAF_RequiredFieldValidator7.controltovalidate = "CPHEAF_txtphdfname";
+CPHEAF_RequiredFieldValidator7.focusOnError = "t";
+CPHEAF_RequiredFieldValidator7.errormessage = "Enter Father Name";
+CPHEAF_RequiredFieldValidator7.display = "Dynamic";
+CPHEAF_RequiredFieldValidator7.validationGroup = "phd";
+CPHEAF_RequiredFieldValidator7.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator7.initialvalue = "";
+var CPHEAF_RequiredFieldValidator9 = document.all ? document.all["CPHEAF_RequiredFieldValidator9"] : document.getElementById("CPHEAF_RequiredFieldValidator9");
+CPHEAF_RequiredFieldValidator9.controltovalidate = "CPHEAF_ddlgender";
+CPHEAF_RequiredFieldValidator9.focusOnError = "t";
+CPHEAF_RequiredFieldValidator9.errormessage = "Select Gender";
+CPHEAF_RequiredFieldValidator9.display = "Dynamic";
+CPHEAF_RequiredFieldValidator9.validationGroup = "phd";
+CPHEAF_RequiredFieldValidator9.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator9.initialvalue = "0";
+var CPHEAF_RequiredFieldValidator6 = document.all ? document.all["CPHEAF_RequiredFieldValidator6"] : document.getElementById("CPHEAF_RequiredFieldValidator6");
+CPHEAF_RequiredFieldValidator6.controltovalidate = "CPHEAF_txtaddress";
+CPHEAF_RequiredFieldValidator6.focusOnError = "t";
+CPHEAF_RequiredFieldValidator6.errormessage = "Enter Address";
+CPHEAF_RequiredFieldValidator6.display = "Dynamic";
+CPHEAF_RequiredFieldValidator6.validationGroup = "phd";
+CPHEAF_RequiredFieldValidator6.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+CPHEAF_RequiredFieldValidator6.initialvalue = "";
+var CPHEAF_valInput = document.all ? document.all["CPHEAF_valInput"] : document.getElementById("CPHEAF_valInput");
+CPHEAF_valInput.controltovalidate = "CPHEAF_txtaddress";
+CPHEAF_valInput.focusOnError = "t";
+CPHEAF_valInput.errormessage = "Please enter a maximum of 200 characters";
+CPHEAF_valInput.display = "Dynamic";
+CPHEAF_valInput.validationGroup = "phd";
+CPHEAF_valInput.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+CPHEAF_valInput.validationexpression = "^[\\s\\S]{0,200}$";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ToolkitScriptManager2_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"CPHEAF_btnCancel","PopupControlID":"CPHEAF_pnlpopup","dynamicServicePath":"/EAF/Student/index","id":"CPHEAF_ModalPopupExtender1"}, null, null, $get("CPHEAF_btnShowPopup"));
+});
+
+document.getElementById('CPHEAF_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator1'));
+}
+
+document.getElementById('CPHEAF_RequiredFieldValidator8').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator8'));
+}
+
+document.getElementById('CPHEAF_RequiredFieldValidator2').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator2'));
+}
+
+document.getElementById('CPHEAF_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator3'));
+}
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"CPHEAF_btnCancel","PopupControlID":"CPHEAF_pnlphd","dynamicServicePath":"/EAF/Student/index","id":"CPHEAF_ModalPopupExtender3"}, null, null, $get("CPHEAF_btnShowPopup"));
+});
+
+document.getElementById('CPHEAF_RequiredFieldValidator14').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator14'));
+}
+
+document.getElementById('CPHEAF_RequiredFieldValidator5').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator5'));
+}
+
+document.getElementById('CPHEAF_RequiredFieldValidator4').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator4'));
+}
+
+document.getElementById('CPHEAF_RequiredFieldValidator7').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator7'));
+}
+
+document.getElementById('CPHEAF_RequiredFieldValidator9').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator9'));
+}
+
+document.getElementById('CPHEAF_RequiredFieldValidator6').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_RequiredFieldValidator6'));
+}
+
+document.getElementById('CPHEAF_valInput').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('CPHEAF_valInput'));
+}
+//]]>
+</script>
+</form>
+
+    <script type="text/javascript" src="Scripts/NewEafTemplateScript/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/NewEafTemplateScript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/NewEafTemplateScript/custom.js"></script>
 </body>
 </html>

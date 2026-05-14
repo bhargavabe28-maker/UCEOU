@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "HelveticaNeue-Condensed";
+    font-style: normal;
+    font-weight: normal;
+    src: url("helveticaneue-condensed.eot?#iefix") format("embedded-opentype"), url("helveticaneue-condensed.woff") format("woff"), url("helveticaneue-condensed.ttf") format("truetype"), url("helveticaneue-condensed.svg#helveticaneue-condensed") format("svg");
+}
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Sans'), local('DroidSans'), url('http://themes.googleusercontent.com/static/fonts/droidsans/v3/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff') format('woff');
+}
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Serif'), local('DroidSerif'), url('http://themes.googleusercontent.com/static/fonts/droidserif/v3/0AKsP294HTD-nvJgucYTaIbN6UDyHWBl620a-IRfuBk.woff') format('woff');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
+}
+@font-face {
+    font-family: "SegoeUI-Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("segoeui.eot?#iefix") format("embedded-opentype"), url("segoeui.woff") format("woff"), url("segoeui.ttf") format("truetype"), url("segoeui.svg#segoeui") format("svg");
+}
+@font-face {
+    font-family: "BookAntiqua-BoldItalic";
+    font-style: normal;
+    font-weight: normal;
+    src: url("antquabi.eot?#iefix") format("embedded-opentype"), url("antquabi.woff") format("woff"), url("antquabi.ttf") format("truetype"), url("antquabi.svg#antquabi") format("svg");
+}
+@font-face {
+    font-family: "ColaborateThinRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/ColabThi-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/ColabThi-webfont.woff") format("woff"), url("fonts/ColabThi-webfont.ttf") format("truetype"), url("fonts/ColabThi-webfont.svg#ColaborateThinRegular") format("svg");
+}
+@font-face {
+    font-family: "ColaborateMediumRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/ColabMed-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/ColabMed-webfont.woff") format("woff"), url("fonts/ColabMed-webfont.ttf") format("truetype"), url("fonts/ColabMed-webfont.svg#ColaborateMediumRegular") format("svg");
+}
+.as{font-family: 'ColaborateThinRegular',Arial,sans-serif;}

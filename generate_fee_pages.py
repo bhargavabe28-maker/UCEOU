@@ -1,4 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+import os
+
+# Common template parts from the original UCEOU site
+HEAD_START = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1"><title>
 
@@ -39,7 +42,7 @@
                 <div class="col-md-3 left_col">
                     <div id="divtitle" class="left_col scroll-view">
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="dashboard.html" class="site_title"><img id="imgclgphoto" src="images/logo.png" style="max-height: 35px;" /><span><span id="lblshortcollege">UCEOU</span></span></a>
+                            <a href="dashboard.html" class="site_title"><img id="imgclgphoto" src="https://uceou.in/StudentPhotos/BE/logo.jpg" style="max-height: 35px;" /><span><span id="lblshortcollege">UCEOU</span></span></a>
                         </div>
                         <div class="clearfix"></div>
 
@@ -161,20 +164,9 @@
                 <!-- page content -->
                 <div class="right_col" role="main">
                     <div class="">
+'''
 
-                    <div class="toPopup-content-sub">
-                        <div class="toPopup-list-group">
-                            <div class="panel notifi" >
-                                <div class="panel-heading table-heading notifi_head" style="margin:0px;width:97%;padding:8px;">
-                                    <span>Condonation Fee Details</span>
-                                </div>
-                                <div class=" panel-body" style="margin:0px;">
-                                    <div style="text-align: center; color: #e81212;"><b>--Nill--</b></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+FOOTER = '''
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -207,4 +199,75 @@
     <script type="text/javascript" src="Scripts/NewEafTemplateScript/bootstrap.min.js"></script>
     <script type="text/javascript" src="Scripts/NewEafTemplateScript/custom.js"></script>
 </body>
-</html>
+</html>'''
+
+# Content for each page
+pages = {
+    'condonation_fee.html': '''
+                    <div class="toPopup-content-sub">
+                        <div class="toPopup-list-group">
+                            <div class="panel notifi" >
+                                <div class="panel-heading table-heading notifi_head" style="margin:0px;width:97%;padding:8px;">
+                                    <span>Condonation Fee Details</span>
+                                </div>
+                                <div class=" panel-body" style="margin:0px;">
+                                    <div style="text-align: center; color: #e81212;"><b>--Nill--</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+''',
+    'mess_fee.html': '''
+                    <div class="toPopup-content-sub">
+                        <div class="toPopup-list-group">
+                            <div class="panel notifi" >
+                                <div class="panel-heading table-heading notifi_head" style="margin:0px;width:97%;padding:8px;">
+                                    <span>Mess Fee Details</span>
+                                </div>
+                                <div class=" panel-body" style="margin:0px;">
+                                    <div style="text-align: center; color: #e81212;"><b>--Nill--</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+''',
+    'lab_fee.html': '''
+                    <div class="toPopup-content-sub">
+                        <div class="toPopup-list-group">
+                            <div class="panel notifi" >
+                                <div class="panel-heading table-heading notifi_head" style="margin:0px;width:97%;padding:8px;">
+                                    <span>Lab Fee Details</span>
+                                </div>
+                                <div class=" panel-body" style="margin:0px;">
+                                    <div style="text-align: center; color: #e81212;"><b>--Nill--</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+''',
+    'apply_certificate.html': '''
+                    <div class="toPopup-content-sub">
+                        <div class="toPopup-list-group">
+                            <div class="panel notifi" >
+                                <div class="panel-heading table-heading notifi_head" style="margin:0px;width:97%;padding:8px;">
+                                    <span>Apply Certificates</span>
+                                </div>
+                                <div class=" panel-body" style="margin:0px;">
+                                    <div style="text-align: center; color: #e81212;"><b>--Nill--</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+''',
+}
+
+root = r"c:\Users\saibh\OneDrive\Desktop\UCEOU"
+
+for filename, content in pages.items():
+    full = HEAD_START + content + FOOTER
+    path = os.path.join(root, filename)
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(full)
+    print(f"Written {filename}")
+
+print("\nAll fee pages generated!")

@@ -1,4 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+import os
+import glob
+import re
+
+attendance_content = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1"><title>
 
@@ -221,7 +225,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager2', 'form
                 <div class="col-md-3 left_col">
                     <div id="divtitle" class="left_col scroll-view">
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="dashboard.html" class="site_title"><img id="imgclgphoto" src="images/logo.png" style="max-height: 35px;" /><span><span id="lblshortcollege">UCEOU</span></span></a>
+                            <a href="index.aspx" class="site_title"><img id="imgclgphoto" src="https://uceou.in/StudentPhotos/BE/logo.jpg" style="max-height: 35px;" /><span><span id="lblshortcollege">UCEOU</span></span></a>
                         </div>
                         <div class="clearfix"></div>
 
@@ -244,10 +248,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager2', 'form
                             <div id="divchange" class="menu_section">
                                 <ul class="nav side-menu">
                                     <li>
-                                        <a href="dashboard.html"><i class="fa fa-home"></i> Home</a>
+                                        <a href="index.aspx"><i class="fa fa-home"></i> Home</a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href='https://uceou.in/BERegistrations/Biodata/Hallticket?htno=100524733006'>
                                             <i class="fa fa-bell"></i> BioData/Hostel (Reg)
                                         </a>
                                     </li>
@@ -282,7 +286,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager2', 'form
                                     </li>
                                     
                                     <li>
-                                        <a href="attendance.html"><i class="fa fa-address-card-o"></i>Attendance</a>
+                                        <a href="Attendance.aspx"><i class="fa fa-address-card-o"></i>Attendance</a>
                                     </li>
                                     
                                     <li id="li2">
@@ -298,11 +302,11 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager2', 'form
                                     <li id="lifee">
                                         <a><i class="fa fa-money"></i> Fees <span class="fa fa-chevron-down"></span></a>
                                         <ul id="lisubtut" class="nav child_menu">
-                                            <li><a href="tuition_fee.html">Tuition Fee</a></li>
-                                            <li><a href="condonation_fee.html">Condonation Fee</a></li>
-                                            <li id="limess"><a href="mess_fee.html">Mess Fee</a></li>
+                                            <li><a href="TotalStudentDues.aspx">Tuition Fee</a></li>
+                                            <li><a href="CondonationFee.aspx">Condonation Fee</a></li>
+                                            <li id="limess"><a href="StudentMessFeeDetails.aspx">Mess Fee</a></li>
                                             <li id="li1">
-                                                <a href="apply_certificate.html"><i class="fa fa-handshake-o"></i>Apply Certificates</a>
+                                                <a href="OnlineserviceIndex.aspx"><i class="fa fa-handshake-o"></i>Apply Certificates</a>
                                             </li>
                                             
                                         </ul>
@@ -356,7 +360,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager2', 'form
                                         <a href="PhotoUpload.aspx"><i class="fa fa-book"></i> Photo Upload</a>
                                     </li>
                                     <li>
-                                        <a id="lnksingout" class="fa fa-sign-out" href="index.html" style="width:100%;font-size: 18px;">
+                                        <a id="lnksingout" class="fa fa-sign-out" href="javascript:__doPostBack('ctl00$lnksingout','')" style="width:100%;font-size: 18px;">
                                             &nbsp Log Out
                                         </a>
                                     </li>
@@ -385,7 +389,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager2', 'form
 
                             <div class=" div-singout">
 
-                                <a id="lnklogout" class="fa fa-sign-out link_singout" href="index.html" style="width:100%; height: 20px;">Log Out</a>
+                                <a id="lnklogout" class="fa fa-sign-out link_singout" href="javascript:__doPostBack('ctl00$lnklogout','')" style="width:100%; height: 20px;">Log Out</a>
                             </div>
                         </nav>
                     </div>
@@ -1056,4 +1060,63 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager2', 'form
     <script type="text/javascript" src="Scripts/NewEafTemplateScript/bootstrap.min.js"></script>
     <script type="text/javascript" src="Scripts/NewEafTemplateScript/custom.js"></script>
 </body>
-</html>
+</html>"""
+
+base_dir = r"c:\Users\saibh\OneDrive\Desktop\UCEOU"
+with open(os.path.join(base_dir, "attendance.html"), "w", encoding="utf-8") as f:
+    f.write(attendance_content)
+
+html_files = glob.glob(os.path.join(base_dir, "*.html"))
+
+link_replacements = {
+    r'href="index\.aspx"': 'href="dashboard.html"',
+    r"href='index\.aspx'": "href='dashboard.html'",
+    r'href="Attendance\.aspx"': 'href="attendance.html"',
+    r"href='Attendance\.aspx'": "href='attendance.html'",
+    r'href="TotalStudentDues\.aspx"': 'href="tuition_fee.html"',
+    r"href='TotalStudentDues\.aspx'": "href='tuition_fee.html'",
+    r'href="CondonationFee\.aspx"': 'href="condonation_fee.html"',
+    r"href='CondonationFee\.aspx'": "href='condonation_fee.html'",
+    r'href="StudentMessFeeDetails\.aspx"': 'href="mess_fee.html"',
+    r"href='StudentMessFeeDetails\.aspx'": "href='mess_fee.html'",
+    r'href="OnlineserviceIndex\.aspx"': 'href="apply_certificate.html"',
+    r"href='OnlineserviceIndex\.aspx'": "href='apply_certificate.html'",
+    
+    # logout buttons
+    r'href="javascript:__doPostBack\(&#39;ctl00\$lnksingout&#39;,&#39;&#39;\)"': 'href="index.html"',
+    r"href=\"javascript:__doPostBack\('ctl00\$lnksingout',''\)\"": 'href="index.html"',
+    r'href="javascript:__doPostBack\(&#39;ctl00\$lnklogout&#39;,&#39;&#39;\)"': 'href="index.html"',
+    r"href=\"javascript:__doPostBack\('ctl00\$lnklogout',''\)\"": 'href="index.html"',
+    
+    # logo path
+    r'src="https://uceou\.in/StudentPhotos/BE/logo\.jpg"': 'src="images/logo.png"',
+    # BioData/Hostel fix (the long absolute url to a placeholder)
+    r"href='https://uceou\.in/BERegistrations/Biodata/Hallticket\?htno=\d+'": 'href="#"'
+}
+
+for file in html_files:
+    if "index.html" in file:
+        # Index handles action / links slightly differently 
+        with open(file, "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        # In index.html, change references to uceou_login.html (if any) or make sure it points to dashboard
+        content = re.sub(r'action="dashboard.html"', 'action="dashboard.html"', content)
+        
+        with open(file, "w", encoding="utf-8") as f:
+            f.write(content)
+        continue
+    
+    with open(file, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    original_content = content
+    for pattern, replacement in link_replacements.items():
+        content = re.sub(pattern, replacement, content)
+        
+    if content != original_content:
+        with open(file, "w", encoding="utf-8") as f:
+            f.write(content)
+        print(f"Updated links in {os.path.basename(file)}")
+
+print("Done updating files.")

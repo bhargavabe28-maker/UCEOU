@@ -12,6 +12,6 @@ document.getElementById('btnSubmit').addEventListener('click', function() {
     
     // In a real scenario, this would post to the server.
     // For this clone, we just show a message.
-    alert('Login feature is a demonstration. Redirecting to dashboard...');
-    window.location.href = 'index.html'; // Fallback to the dashboard we built earlier if it still exists
+    alert('Login successful! Redirecting to dashboard...');
+    window.location.href = 'dashboard.html';
 });

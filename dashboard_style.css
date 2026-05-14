@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
-
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    font-family: 'Verdana', 'Arial', sans-serif;
+    background: #f4f7f6;
 }
 
 p {
@@ -31,6 +29,7 @@ a, a:hover, a:focus {
     background: #002a5c;
     color: #fff;
     transition: all 0.3s;
+    font-size: 0.9em;
 }
 
 #sidebar.active {

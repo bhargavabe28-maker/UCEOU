@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Verdana', 'Arial', sans-serif;
+    background: linear-gradient(0deg, #dbf3ff, #ecf9ff 80%) no-repeat;
+    height: 100vh;
+}
+
+.bg-login {
+    background-image: url('https://uceou.in/eaf/student/images/bg-image/bglogin1.jpg');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.head_bg {
+    background-color: rgba(0, 42, 92, 0.9);
+    height: 60px;
+    width: 100%;
+}
+
+.login_bg {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 15% auto;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    max-width: 500px;
+}
+
+.loginpage_bg h3 {
+    margin: 0 auto 20px auto;
+    color: #14498a;
+    border-bottom: 2px ridge #14498a;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.form-control {
+    border: 1px solid #8d8d8d;
+    border-radius: 4px;
+    padding: 10px;
+    height: auto;
+}
+
+.findpwd:hover {
+    color: #e19132 !important;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #cea052 !important;
+}
+
+/* Specific button styling to match original */
+#btnSubmit {
+    transition: background-color 0.3s ease;
+}
+
+#btnSubmit:hover {
+    background-color: #ec971f !important;
+}
+
+@media (max-width: 768px) {
+    .login_bg {
+        margin-top: 30%;
+        width: 90%;
+    }
+    
+    .head_bg h4 {
+        font-size: 16px !important;
+    }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAF ::: UNIVERSITY ::: Dashboard</title>
+    <link rel="icon" type="image/png" href="https://uceou.in/eaf/student/images/logo.jpg">
+    <link rel="stylesheet" href="dashboard_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="https://uceou.in/eaf/student/images/logo.jpg" alt="UCEOU Logo" class="logo-img">
+                <span class="logo-text">UCEOU</span>
+            </div>
+
+            <div class="user-profile">
+                <div class="profile-pic-container">
+                    <img src="https://ui-avatars.com/api/?name=Anumandla+Sai+Bhargav+Reddy&background=fff&color=003366&size=100" alt="Profile Picture" class="profile-pic">
+                </div>
+                <div class="user-info">
+                    <p class="user-id">100524733006</p>
+                    <p class="user-name">ANUMANDLA SAI BHARGAV REDDY</p>
+                    <p class="user-branch">B.E. - CSE</p>
+                </div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-id-card"></i> BioData/Hostel (Reg)</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> My Profile <i class="fas fa-chevron-down pull-right"></i></a></li>
+                <li><a href="#"><i class="fas fa-file-download"></i> Certificates Download</a></li>
+                <li><a href="#"><i class="fas fa-edit"></i> EAF <i class="fas fa-chevron-down pull-right"></i></a></li>
+                <li><a href="#"><i class="fas fa-redo"></i> Revaluation</a></li>
+                <li><a href="#"><i class="fas fa-hand-holding-usd"></i> Scholarship AppNo</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Attendance</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Internals</a></li>
+                <li><a href="#"><i class="fas fa-comment-alt"></i> Feedback</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="uceou_login.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid dashboard-main">
+                <div class="dashboard-header">
+                    <h2>Dashboard</h2>
+                    <span class="support-label"><i class="fas fa-circle"></i> SUPPORT</span>
+                </div>
+
+                <!-- Tile Grid -->
+                <div class="row tile-grid">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="tile tile-blue">
+                            <div class="tile-icon"><i class="fas fa-user-graduate"></i></div>
+                            <div class="tile-body">
+                                <h4>Exam</h4>
+                                <p>Application Form</p>
+                            </div>
+                            <div class="tile-footer">Prepare EAF <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="tile tile-orange">
+                            <div class="tile-icon"><i class="fas fa-university"></i></div>
+                            <div class="tile-body">
+                                <h4>Fee Dues</h4>
+                                <p>Not Updated</p>
+                            </div>
+                            <div class="tile-footer">Make Payment <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="tile tile-pink">
+                            <div class="tile-icon"><i class="fas fa-bell"></i></div>
+                            <div class="tile-body">
+                                <h4>Notifications</h4>
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="tile-footer">View Notifications <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="tile tile-purple">
+                            <div class="tile-icon"><i class="fas fa-print"></i></div>
+                            <div class="tile-body">
+                                <h4>EAF</h4>
+                                <p>Print</p>
+                            </div>
+                            <div class="tile-footer">EAF Print Here <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row tile-grid">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="tile tile-grey">
+                            <div class="tile-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="tile-body">
+                                <h4>Online</h4>
+                                <p>Certificates</p>
+                            </div>
+                            <div class="tile-footer">Apply Certificates <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="tile tile-lightpink">
+                            <div class="tile-icon"><i class="fas fa-print"></i></div>
+                            <div class="tile-body">
+                                <h4>Revaluation</h4>
+                                <p>Print</p>
+                            </div>
+                            <div class="tile-footer">EAF Print Here <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="tile tile-lavender">
+                            <div class="tile-icon"><i class="fas fa-history"></i></div>
+                            <div class="tile-body">
+                                <h4>History</h4>
+                                <p>Paid Amounts</p>
+                            </div>
+                            <div class="tile-footer">Payment History Here <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="tile tile-green">
+                            <div class="tile-icon"><i class="fas fa-envelope-open-text"></i></div>
+                            <div class="tile-body">
+                                <h4>Need Help ?</h4>
+                                <p>View/Post Query</p>
+                            </div>
+                            <div class="tile-footer">View/Submit your queries <i class="fas fa-arrow-circle-right pull-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Updates Table -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content-panel">
+                            <div class="panel-header">Important Updates</div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Year/Sem</th>
+                                            <th>Exam Type</th>
+                                            <th>Fee Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>III Sem</td>
+                                            <td>Regular</td>
+                                            <td>EAF Fee</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="dashboard_script.js"></script>
+</body>
+</html>

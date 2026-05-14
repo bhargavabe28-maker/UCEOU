@@ -32,10 +32,29 @@
             <ul class="list-unstyled components">
                 <li class="active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#"><i class="fas fa-id-card"></i> BioData/Hostel (Reg)</a></li>
-                <li><a href="#"><i class="fas fa-user"></i> My Profile <i class="fas fa-chevron-down pull-right"></i></a></li>
+                <li>
+                    <a href="#profileSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user"></i> My Profile</a>
+                    <ul class="collapse list-unstyled" id="profileSubmenu">
+                        <li><a href="#">View Profile</a></li>
+                        <li><a href="#">Update Profile</a></li>
+                        <li><a href="#">Change Password</a></li>
+                    </ul>
+                </li>
                 <li><a href="#"><i class="fas fa-file-download"></i> Certificates Download</a></li>
-                <li><a href="#"><i class="fas fa-edit"></i> EAF <i class="fas fa-chevron-down pull-right"></i></a></li>
-                <li><a href="#"><i class="fas fa-redo"></i> Revaluation</a></li>
+                <li>
+                    <a href="#eafSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-edit"></i> EAF</a>
+                    <ul class="collapse list-unstyled" id="eafSubmenu">
+                        <li><a href="#">EAF Preperation</a></li>
+                        <li><a href="#">EAF Print Out</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#revalSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-redo"></i> Revaluation</a>
+                    <ul class="collapse list-unstyled" id="revalSubmenu">
+                        <li><a href="#">Revaluation Preperation</a></li>
+                        <li><a href="#">Revaluation Print Out</a></li>
+                    </ul>
+                </li>
                 <li><a href="#"><i class="fas fa-hand-holding-usd"></i> Scholarship AppNo</a></li>
                 <li><a href="#"><i class="fas fa-calendar-alt"></i> Attendance</a></li>
                 <li><a href="#"><i class="fas fa-chart-bar"></i> Internals</a></li>
@@ -153,8 +172,58 @@
                     </div>
                 </div>
 
-                <!-- Important Updates Table -->
+                <!-- Fee Section with Lab Fee -->
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="content-panel">
+                            <div class="panel-header" style="background: #f0ad4e;">Student Fee Dues</div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Fee Description</th>
+                                            <th>Amount (₹)</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Exam Regular Fee (III Sem)</td>
+                                            <td>2,500</td>
+                                            <td class="text-danger">Pending</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td><b>Lab Fee (Computer Science)</b></td>
+                                            <td>1,200</td>
+                                            <td class="text-danger">Pending</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Library Late Fine</td>
+                                            <td>50</td>
+                                            <td class="text-success">Paid</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr style="background: #f9f9f9; font-weight: bold;">
+                                            <td colspan="2" class="text-right">Total Outstanding:</td>
+                                            <td colspan="2" class="text-danger">₹ 3,700</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="panel-footer text-right">
+                                <button class="btn btn-warning">Proceed to Payment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Updates Table -->
+                <div class="row" style="margin-top: 30px;">
                     <div class="col-md-12">
                         <div class="content-panel">
                             <div class="panel-header">Important Updates</div>
